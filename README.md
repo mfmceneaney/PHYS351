@@ -40,7 +40,7 @@ $ git clone https://github.com/adafruit/Adafruit_Python_BluefruitLE.git
 $ cd Adafruit_Python_BluefruitLE
 $ sudo python setup.py install
 ```
-Documentation is avaiable online at:
+Documentation is available online at:
 https://cdn-learn.adafruit.com/downloads/pdf/bluefruit-le-python-library.pdf
 
 Also take a look at this example of bluetooth data transmission between Arduino and Raspberry Pi online:

@@ -6,7 +6,7 @@ Download the Arduino library from:
 https://learn.adafruit.com/adafruit-lis3dh-triple-axis-accelerometer-breakout/arduino
 
 Or you can clone it with:
-    $ git clone https://github.com/adafruit/Adafruit_LIS3DH.git
+'''$ git clone https://github.com/adafruit/Adafruit_LIS3DH.git'''
 
 Documentation for this product is available at:
 https://cdn-learn.adafruit.com/downloads/pdf/adafruit-lis3dh-triple-axis-accelerometer-breakout.pdf

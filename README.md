@@ -1,7 +1,8 @@
 # PHYS351
-PHYS 351 Scientific Instrumentation Lab Fall 2019 Final Project
+# PHYS 351 Scientific Instrumentation Lab Fall 2019 Final Project
 
-For the Adafruit LIS3DH 3-axis accelerometer download the Arduino library from:
+# Adafruit LIS3DH 3-axis accelerometer
+Download the Arduino library from:
 https://learn.adafruit.com/adafruit-lis3dh-triple-axis-accelerometer-breakout/arduino
 
 Or you can clone it with:

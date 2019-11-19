@@ -43,5 +43,19 @@ $ sudo python setup.py install
 Documentation is available online at:
 [Bluefruit LE Python Library](https://cdn-learn.adafruit.com/downloads/pdf/bluefruit-le-python-library.pdf)
 
+## Bluetooth Python Library
+For using Bluetooth in python download and install the PyBluez library from:
+[PyBluez](https://pypi.org/project/PyBluez/) and follow the instructions for installation on Linux at [PyBluez Documentation](https://pybluez.readthedocs.io/en/latest/install.html).
+
+Or download and install it with:
+```
+$ pip install PyBluez
+```
+
+or for BLE dependencies on Linux:
+```
+pip install pybluez\[ble\]
+```
+
 Also take a look at this example of bluetooth data transmission between Arduino and Raspberry Pi online:
 http://blog.whatgeek.com.pt/2015/09/bluetooth-communication-between-raspberry-pi-and-arduino/

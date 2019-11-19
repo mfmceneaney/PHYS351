@@ -58,7 +58,7 @@ sudo apt-get install libboost-python-dev
 sudo apt-get install libbluetooth-dev
 pip install pybluez\[ble\]
 ```
-which installs the header files. (You might also need to do this for these modules as well:
+which installs the header files. You might also need to do this for these modules as well:
 ```
 sudo apt-get install libboost-thread-dev
 sudo apt-get install libglib2.0-dev

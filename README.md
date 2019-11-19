@@ -54,7 +54,15 @@ $ pip install PyBluez
 
 or for BLE dependencies on Linux:
 ```
+sudo apt-get install libboost-python-dev
+sudo apt-get install libbluetooth-dev
 pip install pybluez\[ble\]
+```
+which installs the header files. (You might also need to do this for these modules as well:
+```
+sudo apt-get install libboost-thread-dev
+sudo apt-get install libglib2.0-dev
+sudo apt-get install python-dev
 ```
 
 Also take a look at this example of bluetooth data transmission between Arduino and Raspberry Pi online:

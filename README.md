@@ -65,5 +65,8 @@ sudo apt-get install libglib2.0-dev
 sudo apt-get install python-dev
 ```
 
-Also take a look at this example of bluetooth data transmission between Arduino and Raspberry Pi online:
+Also take a look at these examples of bluetooth data transmission between Arduino and Raspberry Pi online:
 http://blog.whatgeek.com.pt/2015/09/bluetooth-communication-between-raspberry-pi-and-arduino/
+
+In addition to PyBluez, python has a socket library which can also be used:
+http://blog.kevindoran.co/bluetooth-programming-with-python-3/

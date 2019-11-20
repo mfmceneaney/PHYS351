@@ -7,7 +7,7 @@ Download the Arduino library from:
 
 Or you can clone it with:
 ```
-$ git clone https://github.com/adafruit/Adafruit_LIS3DH.git
+git clone https://github.com/adafruit/Adafruit_LIS3DH.git
 ```
 
 Documentation for this product is available at:
@@ -19,7 +19,7 @@ Download the library from:
 
 Or you can clone it with:
 ```
-$ git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
+git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
 ```
 
 Documentation for this product is available at:
@@ -31,14 +31,14 @@ For documentation on the Arduino SoftwareSerial library see:
 
 For receiving bluetooth data on the Raspberry Pi download the Adafruit Bluetooth LE Python Library using:
 ```
-$ sudo pip install Adafruit-BluefruitLE
+sudo pip install Adafruit-BluefruitLE
 ```
 
 Or clone it from gitHub:
 ```
-$ git clone https://github.com/adafruit/Adafruit_Python_BluefruitLE.git
-$ cd Adafruit_Python_BluefruitLE
-$ sudo python setup.py install
+git clone https://github.com/adafruit/Adafruit_Python_BluefruitLE.git
+cd Adafruit_Python_BluefruitLE
+sudo python setup.py install
 ```
 Documentation is available online at:
 [Bluefruit LE Python Library](https://cdn-learn.adafruit.com/downloads/pdf/bluefruit-le-python-library.pdf)
@@ -49,10 +49,14 @@ For using Bluetooth in python download and install the PyBluez library from:
 
 Or download and install it with:
 ```
-$ pip install PyBluez
+pip install PyBluez
 ```
-
-or for BLE dependencies on Linux:
+or for use with Python 3:
+```
+sudo apt-get install bluetooth libbluetooth-dev
+sudo python3.7 -m pip install pybluez
+```
+or for BLE dependencies on Linux (just compatible with Python 2):
 ```
 sudo apt-get install libboost-python-dev
 sudo apt-get install libbluetooth-dev

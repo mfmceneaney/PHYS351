@@ -13,21 +13,27 @@ git clone https://github.com/adafruit/Adafruit_LIS3DH.git
 Documentation for this product is available at:
 [Adafruit LIS3DH Triple Axis Accelerometer Breakout](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-lis3dh-triple-axis-accelerometer-breakout.pdf)
 
-## Adafruit Bluefruit Bluetooth LE SPI Friend
+## Adafruit Bluefruit Bluetooth LE SPI/UART Friend
 Download the library from:
 [Adafruit Bluefruit SPI Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-spi-breakout/software)
+[Adafruit Bluefruit UART Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-uart-breakout/software)
 
 Or you can clone it with:
 ```
 git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
 ```
 
-Documentation for this product is available at:
+Documentation for these products are available at:
 [Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf)
+[Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-uart-breakout.pdf)
+
+## Adafruit Pro Trinket 3V Board
+This has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
+[Adafruit Pro Trinket](https://www.arduino.cc/en/Reference/SoftwareSerial)
 
 ## Bluetooth Communication
 For documentation on the Arduino SoftwareSerial library see:
-[Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/SoftwareSerial)
+[Arduino SoftwareSerial Library](https://learn.adafruit.com/introducing-pro-trinket/)
 
 For receiving bluetooth data on the Raspberry Pi download the Adafruit Bluetooth LE Python Library using:
 ```

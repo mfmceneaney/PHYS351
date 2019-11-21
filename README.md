@@ -16,7 +16,7 @@ Documentation for this product is available at:
 ## Adafruit Bluefruit Bluetooth LE SPI/UART Friend
 Download the library from:
 [Adafruit Bluefruit SPI Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-spi-breakout/software)
-[Adafruit Bluefruit UART Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-uart-breakout/software)
+[Adafruit Bluefruit UART Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-le-uart-friend/software)
 
 Or you can clone it with:
 ```
@@ -25,7 +25,7 @@ git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
 
 Documentation for these products are available at:
 [Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf)
-[Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-uart-breakout.pdf)
+[Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-le-uart-friend.pdf)
 
 ## Adafruit Pro Trinket 3V Board
 This has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:

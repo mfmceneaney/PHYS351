@@ -29,7 +29,7 @@ Documentation for these products are available at:
 
 ## Adafruit Pro Trinket 3V Board
 This has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
-[Adafruit Pro Trinket](https://www.arduino.cc/en/Reference/SoftwareSerial)
+[Adafruit Pro Trinket](https://cdn-learn.adafruit.com/downloads/pdf/introducing-pro-trinket.pdf)
 
 ## Bluetooth Communication
 For documentation on the Arduino SoftwareSerial library see:

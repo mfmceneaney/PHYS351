@@ -75,6 +75,9 @@ sudo apt-get install libglib2.0-dev
 sudo apt-get install python-dev
 ```
 
+To install Bluez software follow the direction at:
+[Installing Bluez on the Raspberry Pi](https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)
+
 Also take a look at these examples of bluetooth data transmission between Arduino and Raspberry Pi online:
 http://blog.whatgeek.com.pt/2015/09/bluetooth-communication-between-raspberry-pi-and-arduino/
 

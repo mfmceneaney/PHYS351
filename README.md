@@ -15,7 +15,9 @@ Documentation for this product is available at:
 
 ## Adafruit Bluefruit Bluetooth LE SPI/UART Friend
 Download the library from:
+
 [Adafruit Bluefruit SPI Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-spi-breakout/software)
+
 [Adafruit Bluefruit UART Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-le-uart-friend/software)
 
 Or you can clone it with:

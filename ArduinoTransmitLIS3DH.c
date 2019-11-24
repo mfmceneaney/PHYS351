@@ -1,3 +1,14 @@
+#include <Adafruit_ATParser.h>
+#include <Adafruit_BluefruitLE_SPI.h>
+#include <Adafruit_BLEMIDI.h>
+#include <Adafruit_BLEBattery.h>
+#include <Adafruit_BLEGatt.h>
+#include <Adafruit_BLEEddystone.h>
+#include <Adafruit_BLE.h>
+#include <Adafruit_BluefruitLE_UART.h>
+
+#include <SoftwareSerial.h>
+
 /*********************************************************************
  This is an example for our nRF51822 based Bluefruit LE modules
 
@@ -41,12 +52,15 @@
 // software SPI
 //Adafruit_LIS3DH lis = Adafruit_LIS3DH(LIS3DH_CS, LIS3DH_MOSI, LIS3DH_MISO, LIS3DH_CLK);
 // hardware SPI
-Adafruit_LIS3DH lis = Adafruit_LIS3DH(LIS3DH_CS);
+//Adafruit_LIS3DH lis = Adafruit_LIS3DH(LIS3DH_CS);
 // I2C
-//Adafruit_LIS3DH lis = Adafruit_LIS3DH();
+Adafruit_LIS3DH lis = Adafruit_LIS3DH();
 
 // MFM 11/16/19
 SoftwareSerial lisSerial(LIS3DH_MISO, LIS3DH_MOSI); // RX, TX
+
+// MFM 11/18/19
+//SoftwareSerial Serial(BLUEFRUIT_SPI_MISO, BLUEFRUIT_SPI_MOSI); // RX, TX
 
 /*=========================================================================
     APPLICATION SETTINGS
@@ -88,7 +102,7 @@ Adafruit_BluefruitLE_UART ble(bluefruitSS, BLUEFRUIT_UART_MODE_PIN,
 
 
 /* ...or hardware serial, which does not need the RTS/CTS pins. Uncomment this line */
-// Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN);
+//Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN);
 
 /* ...hardware SPI, using SCK/MOSI/MISO hardware SPI pins and then user selected CS/IRQ/RST */
 //Adafruit_BluefruitLE_SPI ble(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
@@ -101,8 +115,8 @@ Adafruit_BluefruitLE_UART ble(bluefruitSS, BLUEFRUIT_UART_MODE_PIN,
 
 // A small helper
 void error(const __FlashStringHelper*err) {
-  Serial.println(err);
-  while (1);
+  bluefruitSS.println(err);
+  while (1); 
 }
 
 /**************************************************************************/
@@ -113,11 +127,15 @@ void error(const __FlashStringHelper*err) {
 /**************************************************************************/
 void setup(void)
 {
-  while (!Serial);  // required for Flora & Micro
-  delay(500);
+  //while (!Serial);  // required for Flora & Micro
+  //delay(500);
 
+  // Arduino Serial Monitor comes with a 115200 baud rate.
   Serial.begin(115200);
+  // RPi bluetooth comes automatically configured to a 9600 baud rate.
+  bluefruitSS.begin(9600);
   Serial.println(F("Adafruit Bluefruit AT Command Example"));
+  bluefruitSS.println(F("Adafruit Bluefruit AT Command Example"));
   Serial.println(F("-------------------------------------"));
 
   /* Initialise the module */
@@ -133,6 +151,7 @@ void setup(void)
   {
     /* Perform a factory reset to make sure everything is in a known state */
     Serial.println(F("Performing a factory reset: "));
+    bluefruitSS.println(F("Performing a factory reset: "));
     if ( ! ble.factoryReset() ){
       error(F("Couldn't factory reset"));
     }
@@ -142,25 +161,26 @@ void setup(void)
   ble.echo(false);
 
   Serial.println("Requesting Bluefruit info:");
+  bluefruitSS.println("Requesting Bluefruit info:");
   /* Print Bluefruit information */
   ble.info();
   //=======================================================================================//
   // from acceldemo.c 
-  lisSerial.begin(9600);
-  while (!lisSerial) delay(10);     // will pause Zero, Leonardo, etc until lisSerial console opens
+  Serial.begin(9600);
+  while (!Serial) delay(10);     // will pause Zero, Leonardo, etc until Serial console opens
 
-  lisSerial.println("LIS3DH test!");
+  Serial.println("LIS3DH test!");
   
   if (! lis.begin(0x18)) {   // change this to 0x19 for alternative i2c address
-    lisSerial.println("Couldnt start");
+    Serial.println("Couldnt start");
     while (1) yield();
   }
-  lisSerial.println("LIS3DH found!");
+  Serial.println("LIS3DH found!");
   
   lis.setRange(LIS3DH_RANGE_4_G);   // 2, 4, 8 or 16 G!
   
-  lisSerial.print("Range = "); lisSerial.print(2 << lis.getRange());  
-  lisSerial.println("G");
+  Serial.print("Range = "); Serial.print(2 << lis.getRange());  
+  Serial.println("G");
   //=======================================================================================//
 }
 
@@ -173,6 +193,7 @@ void loop(void)
 {
   // Display command prompt
   Serial.print(F("AT > "));
+  bluefruitSS.print(F("AT > "));
 
   // Check for user input and echo it back if anything was found
   char command[BUFSIZE+1];
@@ -186,6 +207,11 @@ void loop(void)
 
   lis.read();      // get X Y and Z data at once
   // Then print out the raw data
+  bluefruitSS.print("X:  "); bluefruitSS.print(lis.x); 
+  bluefruitSS.print("  \tY:  "); bluefruitSS.print(lis.y); 
+  bluefruitSS.print("  \tZ:  "); bluefruitSS.print(lis.z);
+  
+  // Print measurements to serial monitor
   Serial.print("X:  "); Serial.print(lis.x); 
   Serial.print("  \tY:  "); Serial.print(lis.y); 
   Serial.print("  \tZ:  "); Serial.print(lis.z); 
@@ -195,14 +221,14 @@ void loop(void)
   lis.getEvent(&event);
   
   /* Display the results (acceleration is measured in m/s^2) */
-  Serial.print("\t\tX: "); Serial.print(event.acceleration.x);
-  Serial.print(" \tY: "); Serial.print(event.acceleration.y); 
-  Serial.print(" \tZ: "); Serial.print(event.acceleration.z); 
-  Serial.println(" m/s^2 ");
+  bluefruitSS.print("\t\tX: "); bluefruitSS.print(event.acceleration.x);
+  bluefruitSS.print(" \tY: "); bluefruitSS.print(event.acceleration.y); 
+  bluefruitSS.print(" \tZ: "); bluefruitSS.print(event.acceleration.z); 
+  bluefruitSS.println(" m/s^2 ");
 
-  Serial.println();
+  bluefruitSS.println();
  
-  delay(200); 
+  delay(1);
 }
 
 /**************************************************************************/

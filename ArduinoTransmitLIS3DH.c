@@ -166,7 +166,6 @@ void setup(void)
   ble.info();
   //=======================================================================================//
   // from acceldemo.c 
-  Serial.begin(9600);
   while (!Serial) delay(10);     // will pause Zero, Leonardo, etc until Serial console opens
 
   Serial.println("LIS3DH test!");

@@ -1,0 +1,27 @@
+[Adafruit Bluefruit LE]# info
+Device E4:DB:75:D5:D2:AC (random)
+	Name: Adafruit Bluefruit LE
+	Alias: Adafruit Bluefruit LE
+	Paired: no
+	Trusted: no
+	Blocked: no
+	Connected: yes
+	LegacyPairing: no
+	UUID: Vendor specific           (00001530-1212-efde-1523-785feabcd123)
+	UUID: Generic Access Profile    (00001800-0000-1000-8000-00805f9b34fb)
+	UUID: Generic Attribute Profile (00001801-0000-1000-8000-00805f9b34fb)
+	UUID: Device Information        (0000180a-0000-1000-8000-00805f9b34fb)
+	UUID: Nordic UART Service       (6e400001-b5a3-f393-e0a9-e50e24dcca9e)
+	RSSI: -63
+	TxPower: 0
+[CHG] Device E4:DB:75:D5:D2:AC ServicesResolved: no
+[CHG] Device E4:DB:75:D5:D2:AC Connected: no
+Failed to pair: org.bluez.Error.AuthenticationCanceled
+[NEW] Device 4F:CF:27:14:9C:45 4F-CF-27-14-9C-45
+[CHG] Device 78:C5:12:01:0C:6F ManufacturerData Key: 0x004c
+[CHG] Device 78:C5:12:01:0C:6F ManufacturerData Value:
+  0c 0e 00 82 bf cb e5 fe 48 49 cc df 56 f4 3a e0  ........HI..V.:.
+[CHG] Device 4C:5A:4F:C2:8D:6D ManufacturerData Key: 0x004c
+[CHG] Device 4C:5A:4F:C2:8D:6D ManufacturerData Value:
+  10 06 13 1e 90 9a fd e8                          ........        
+[bluetooth]# scan off

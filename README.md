@@ -37,6 +37,7 @@ This has almost the full capabilities of an Arduino Uno board, but is much small
 
 To write to the UART Friend you will also need to use the [Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/softwareSerial).
 
+To add the board to the Arduino IDE use the directions at [Arduino 1.6x IDE Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup/arduino-1-dot-6-x-ide)
 
 ## Raspberry Pi 4 Bluetooth Communication
 When using Bluetooth LE on the Raspberry Pi, if the Bluetooth icon is not visible in the top right corner of the screen restart dbus:

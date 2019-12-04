@@ -6,19 +6,21 @@ import binascii
 import struct
 from bluepy import btle
 
-class MyDelegate(btle.DefaultDelegate):
-    def __init__(self):
-        btle.DefaultDelegate.__init__(self)
-        # ... initialise here
+#class MyDelegate(btle.DefaultDelegate):
+#    def __init__(self):
+#        btle.DefaultDelegate.__init__(self)
+#        # ... initialise here
 
-    def handleNotification(self, cHandle, data):
-        # ... perhaps check cHandle
-        print(data)
+#    def handleNotification(self, cHandle, data):
+#        # ... perhaps check cHandle
+ #       print(data)
 
 # This next line is supposed to connect
 
 dev = btle.Peripheral("E4:DB:75:D5:D2:AC","random") # Use your correct address
-dev.withDelegate( MyDelegate() )
+
+#dev.withDelegate( MyDelegate() )
+
 print('Services') # This will list the services
 
 for svc in dev.services:
@@ -63,7 +65,7 @@ print(MovementService.getCharacteristics(uuidValue))
 MovementSensorValue = MovementService.getCharacteristics(uuidValue)[0]
 # print(str(MovementSensorValue))
 
-buff = ctypes.create_string_buffer(4)
+#buff = ctypes.create_string_buffer(4)
 
 # Now, the actual read and decoding
 # print(str(MovementSensorValue.read()))
@@ -76,15 +78,23 @@ print(MovementSensorValue.propertiesToString())
 #        continue
 data = ""
 while True:
-    print(MovementSensorValue.read(),"\n")
-    data += str(MovementSensorValue.read())
-    data_end = data.find('\r\ntest\r\n')
+#    print(MovementSensorValue.read(),"\n")
+    data += str(MovementSensorValue.read().decode('UTF-8'))
+    #data = "".join(c for c in data if c.isdigit())
+    print("data0= ", data)
+    data_end = data.find("z")
     if data_end != -1:
-        data.replace("\r\ntest\r\n","")
-        rec = data[:data_end]
-        print("rec = ",rec)
-        data = data[data_end:]
+        #data.replace("\r\n","")
+        data = data[data_end + 1:]
         print("data = ",data)
+        data_end = data.find("z")
+        if data_end != -1:
+                toprint = data[:data_end]
+                print("toprint = ",toprint) #Frequency Measurement
+                data = data[data_end + 1:] 
+                #data_end = data.find("\'b\'")
+#        data = data[data_end:]
+    #print("data = ",data)
     #val = binascii.b2a_hex(MovementSensorValue.read())
     #print(val,"\n")
     #val = binascii.unhexlify(val)
@@ -93,3 +103,4 @@ while True:
     # val = struct.unpack_from(MovementSensorValue.read(),buff,0)
     # print(val)
     # print(str(MovementSensorValue))
+

@@ -27,9 +27,7 @@ $ git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
 
 Documentation for these products is available at:
 
-[Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf)
-
-[Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-le-uart-friend.pdf)
+[Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf) / [Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-le-uart-friend.pdf)
 
 IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
 
@@ -96,7 +94,7 @@ The UART Friend has a base UART service UUID: 6e400001-b5a3-f393-e0a9-e50e24dcca
 A great book on Bluetooth programming basics with section on using BlueZ in Python and C:
 [An Introduction to Bluetooth Programming, Albert Huang](https://people.csail.mit.edu/albert/bluez-intro/index.html)
 
-Also take a look at these examples of bluetooth data transmission between Arduino and Raspberry Pi online:
+Also take a look at this example of bluetooth data transmission between Arduino and Raspberry Pi online:
 http://blog.whatgeek.com.pt/2015/09/bluetooth-communication-between-raspberry-pi-and-arduino/
 
 ## Further Reading

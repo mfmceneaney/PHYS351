@@ -76,17 +76,17 @@ To install Bluez software follow the direction at:
 [Installing Bluez on the Raspberry Pi](https://learn.adafruit.com/install-bluez-on-the-raspberry-pi/installation)
 
 ## Bluetooth Library Bluepy
-This is the python library for Bluetooth LE communication with BlueZ which is automatically installed with BlueZ.  However, to install Bluepy in Python 3+ use the following commands (after installing BlueZ):
+This is the python library for Bluetooth LE communication with BlueZ which is automatically installed with BlueZ in Python 2.7 on the Raspberry Pi.  To install Bluepy in Python 3+ use the following commands (after installing BlueZ):
 ```
 sudo apt-get install python3-pip libglib2.0-dev
 sudo pip3 install bluepy
 ```
-See Ian Harvey's instructions for installing [Bluepy](https://github.com/IanHarvey/bluepy).
+Also see Ian Harvey's instructions for installing [Bluepy](https://github.com/IanHarvey/bluepy).
 
 To add a the UART Friend as a peripheral make sure to use the "random" option when specifying the Bluetooth LE Address, like so:
 ```
 from bluepy import btle
-dev = btle.Peripheral("XX:XX:XX:XX:XX:XX","random") # Use your correct address
+p = btle.Peripheral("XX:XX:XX:XX:XX:XX","random") # Use your correct address
 ```
 The UART Friend has a base UART service UUID: 6e400001-b5a3-f393-e0a9-e50e24dcca9e.  This has two characteristics: TX (0x0002 for transmit) and RX (0x0003 for receive).  See [Bluefruit UART Service](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-le-uart-friend/uart-service) for more information.
 

@@ -6,7 +6,7 @@ from time import time
 from bluepy import btle
 
 """
-This module reads the acceleration data from the Bluefruit UART Friend
+This file reads the acceleration data from the Bluefruit UART Friend
 connected to the Arduino Uno and LIS3DH accelerometer.  It prints measured
 accelerations to the screen and allows another program to read the 
 measurements and the time they were recieved.
@@ -23,7 +23,7 @@ def get_acc():
     return measurement
 
 # Main Loop for Receiving Measurements
-for i in range(1000000):
+while True:
      try:
           dev = btle.Peripheral("E4:DB:75:D5:D2:AC","random") # Use your specific address for the BLE device
           MovementService = dev.getServiceByUUID(MovementSensor)
@@ -46,11 +46,39 @@ for i in range(1000000):
                     data = data[data_end + 1:]
                     print("data = ",data)
                     data_end = data.find("z") # Our Arduino code separates measurements with z
+                    
+                    if data_end == -1:
+                        to_print = "".join(c for c in data if (c != "." and c != "-"))
+                        print("\t\t\t\t to_print = ",to_print)
+                        
+                        if to_print.isdecimal() and data.find(".") != -1:
+                            to_print = data
+                            acc = float(to_print)
+                            measurement = [acc,t]
+                            data = data[data_end + 1:]
 
                     if data_end != -1:
                          to_print = data[:data_end]
-                         print("toprint = ",toprint)
-                         acc = float(to_print)
+                         index1 = to_print.find(".")
+                         index2 = to_print.find(".",index1 + 1)     # check if there is a second decimal point
+                         index3 = to_print.find("-",index1 + 1)     # check if there is - after the decimal point
+                         index4= to_print.find("-")
+                         index5=to_print.find("-",index4 + 1)       # check if there is a second -
+                         
+                         if index2 != -1:
+                             to_print = to_print[:index2 - 1]
+
+                         if index3 != -1:
+                             to_print = to_print[:index3 - 1]
+
+                         if index5 != -1:
+                             to_print = to_print[:index5 - 1]
+                             
+                         print("\t\ttoprint = ",to_print)
+                         acc_test = "".join(c for c in to_print if (c != "." and c != "-"))
+                         if  acc_ test != "":      # check that this is actually a number before converting to float
+                             acc = float(to_print)
+                            
                          measurement = [acc,t]
                          data = data[data_end + 1:]
 

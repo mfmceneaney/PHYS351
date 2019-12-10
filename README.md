@@ -29,18 +29,11 @@ Documentation for these products is available at:
 
 [Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf) / [Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-le-uart-friend.pdf)
 
-IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
-
-![TestImage](/Images/TeamVaderFlowChart.jpeg)
-
-
-## Adafruit Pro Trinket 3V Board
-Although we did not use it, this has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
-[Adafruit Pro Trinket](https://cdn-learn.adafruit.com/downloads/pdf/introducing-pro-trinket.pdf)
-
 To write to the UART Friend you will also need to use the [Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/softwareSerial).
 
-To add the board to the Arduino IDE use the directions at [Arduino 1.6x IDE Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup/arduino-1-dot-6-x-ide)
+IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
+
+![Arduino Connections](/Images/Fritizing_UART_BLE_LIS3DH-1.jpg)
 
 ## Raspberry Pi 4 Bluetooth Communication
 When using Bluetooth LE on the Raspberry Pi, if the Bluetooth icon is not visible in the top right corner of the screen restart dbus:
@@ -102,6 +95,12 @@ Also take a look at this example of bluetooth data transmission between Arduino 
 http://blog.whatgeek.com.pt/2015/09/bluetooth-communication-between-raspberry-pi-and-arduino/
 
 ## Further Reading
+
+## Adafruit Pro Trinket 3V Board
+Although we did not use it, this has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
+[Adafruit Pro Trinket](https://cdn-learn.adafruit.com/downloads/pdf/introducing-pro-trinket.pdf)
+
+To add the board to the Arduino IDE use the directions at [Arduino 1.6x IDE Setup](https://learn.adafruit.com/adafruit-arduino-ide-setup/arduino-1-dot-6-x-ide)
 
 ### Adafruit Bluetooth LE Python Library
 For receiving bluetooth data from an Adafruit Bluefruit LE device on the Raspberry Pi download the Adafruit Bluetooth LE Python Library using:

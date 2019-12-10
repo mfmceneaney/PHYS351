@@ -61,20 +61,17 @@ class Control():
             "11","12","13","14","15","16","17","18","19","20","30","40","50"]
         command = command.replace(" ","")
         if command.find(s) != -1:
-            print("FOUND COMMAND:",command)
             interpreted_command = command[index + len(s):]
-            print(interpreted_command)
             for n in range(len(words)):
                 interpreted_command = interpreted_command.replace(words[n],replacements[n])
-                print(interpreted_command)
             for c in interpreted_command:
                 if c.isdecimal() or c == ".":
                     result += c
                 else:
                     break
             if result != "":
-                new_s = float(result)
-                self.out_q.put([s,new_s])
+                result = float(result)
+                self.out_q.put([s,result])
 
     def check_command(self,command):
         """

@@ -33,7 +33,7 @@ To write to the UART Friend you will also need to use the [Arduino SoftwareSeria
 
 IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
 
-![Arduino Connections](/Images/Fritizing_UART_BLE_LIS3DH-1.jpg)
+![Arduino Connections](/Images/FritizingUARTLIS3DH.jpg)
 
 ## Raspberry Pi 4 Bluetooth Communication
 When using Bluetooth LE on the Raspberry Pi, if the Bluetooth icon is not visible in the top right corner of the screen restart dbus:

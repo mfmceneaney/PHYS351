@@ -150,22 +150,22 @@ class Control():
                 # MFM 12/7/19
                 self.check_command(command)
 
-                for module in self.modules:
-                    foundWords = []
-                    for word in module.commandWords:
-                        if str(word) in command:
-                            foundWords.append(str(word))
-                    if len(foundWords) == len(module.commandWords):
-                        try:
-                            module.execute(command)
-                            print("The module {0} has been executed "
-                                  "successfully.".format(module.moduleName))
-                        except:
-                            print("[ERROR] There has been an error "
-                                  "when running the {0} module".format(
-                                      module.moduleName))
-                    else:
-                        print("\n")
+                # for module in self.modules:
+                #     foundWords = []
+                #     for word in module.commandWords:
+                #         if str(word) in command:
+                #             foundWords.append(str(word))
+                #     if len(foundWords) == len(module.commandWords):
+                #         try:
+                #             module.execute(command)
+                #             print("The module {0} has been executed "
+                #                   "successfully.".format(module.moduleName))
+                #         except:
+                #             print("[ERROR] There has been an error "
+                #                   "when running the {0} module".format(
+                #                       module.moduleName))
+                #     else:
+                #         print("\n")
             except (TypeError, ControlException):
                 pass
             except Exception as exc:

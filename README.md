@@ -31,8 +31,11 @@ Documentation for these products is available at:
 
 IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
 
+![TestImage](/Images/TeamVaderFlowChart.jpeg)
+
+
 ## Adafruit Pro Trinket 3V Board
-This has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
+Although we did not use it, this has almost the full capabilities of an Arduino Uno board, but is much smaller.  See the documentation at:
 [Adafruit Pro Trinket](https://cdn-learn.adafruit.com/downloads/pdf/introducing-pro-trinket.pdf)
 
 To write to the UART Friend you will also need to use the [Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/softwareSerial).

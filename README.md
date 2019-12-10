@@ -17,7 +17,6 @@ Documentation for this product is available at:
 
 ## Adafruit Bluefruit Bluetooth LE SPI/UART Friend
 Download the library from:
-
 [Adafruit Bluefruit SPI Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-spi-breakout/software) / [Adafruit Bluefruit UART Arduino](https://learn.adafruit.com/introducing-the-adafruit-bluefruit-le-uart-friend/software)
 
 Or clone it with:
@@ -26,13 +25,13 @@ $ git clone https://github.com/adafruit/Adafruit_BluefruitLE_nRF51.git
 ```
 
 Documentation for these products is available at:
-
 [Introducing the Adafruit Bluefruit SPI](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-spi-breakout.pdf) / [Introducing the Adafruit Bluefruit UART](https://cdn-learn.adafruit.com/downloads/pdf/introducing-the-adafruit-bluefruit-le-uart-friend.pdf)
 
 To write to the UART Friend you will also need to use the [Arduino SoftwareSerial Library](https://www.arduino.cc/en/Reference/softwareSerial).
 
 IMPORTANT: To send data on the UART Friend make sure the on board switch is in UART mode and not CMD mode.
 
+Below is the connection diagram for the Bluefruit LE UART Friend and the LIS3DH 3-Axis Accelerometer.
 ![Arduino Connections](/Images/FritzingUARTLIS3DH.png)
 
 ## Raspberry Pi 4 Bluetooth Communication

@@ -1,5 +1,10 @@
 #You can import any required modules here
 
+"""
+Author: Matthew McEneaney
+Check for "frequency" and "length" and numeric command prompts with Siri.
+"""
+
 #This can be anything you want
 moduleName = "testModule"
 

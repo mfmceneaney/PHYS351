@@ -3,6 +3,13 @@ from threading import Thread
 from receive_BLE import receive_BLE
 from threading_siri_control import siri_control
 
+"""
+Author: Matthew McEneaney
+This code should connect to the Adafruit Bluefruit UART Friend to receive accelerations measurements,
+check Siri Voice Control for command prompts, and print acceleration measurements and interpreted commands
+and corresponding values to the command line.  It relies on the function libraries in ~/PHYS351/Threading Libraries/.
+"""
+
 # A thread that consumes data 
 def consumer(in_q):
     while True: 

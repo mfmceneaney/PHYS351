@@ -7,6 +7,15 @@ from receive_BLE import receive_BLE
 from threading_siri_control import siri_control
 from Threading_MotorRunner.py import setup, primary_thread, winddown_fullsteps, windup_fullsteps, swing_fullsteps, swing_halfsteps
 
+"""
+Author: Matthew McEneaney
+This code should connect to the Adafruit Bluefruit UART Friend to receive accelerations measurements,
+check Siri Voice Control and the command line for user input, swing the pendulum and adjust length and 
+frequency as requested, and print acceleration measurements and interpreted commands and corresponding
+values to the command line. It relies on the function libraries in ~/PHYS351/Threading Libraries/.
+Calibration is yet to be performed for interpreting length as a function of motor steps.
+"""
+
 # A thread that consumes data 
 def consumer(in_q):
     acc0 = 0
